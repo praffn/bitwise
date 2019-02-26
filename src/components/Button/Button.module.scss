@@ -1,3 +1,5 @@
+@import "../../variables";
+
 $button-border-color: #ccc;
 
 @function makeBorderShadow($color, $size, $inverse: false) {
@@ -15,6 +17,7 @@ $button-border-color: #ccc;
   font-size: 1em;
   box-shadow: makeBorderShadow(#777, 0.2em);
   outline: none;
+  cursor: $cursorClick, pointer;
 
   &:hover {
     background-color: #ddd;
