@@ -48,11 +48,11 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: .
+          at:
       - run:
           name: Install and configure deploy dependencies
           command: |
-            npm install -g --silent gh-pages
+            sudo npm install -g --silent gh-pages
             git config user.email "praffn+bitwise@praffn.dk"
             git config user.name "Phillip Raffnsoe (via CircleCI)"
       - run:
