@@ -11,7 +11,7 @@ export type RootState = StateType<typeof reducer>;
 
 const persistConfig: PersistConfig = {
   version: 1,
-  key: "root",
+  key: "root-v2",
   storage
 };
 
