@@ -1,15 +1,32 @@
+defaults: &defaults
+  docker:
+    - image: circleci/node:10
+
 version: 2
 jobs:
-  build:
-    docker:
-      - image: circleci/node:10
+  prepare:
+    <<: *defaults
     steps:
       - checkout
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
-          name: setup dependencies
+          name: Install dependencies
           command: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: dependency-cache-{{ checksum "package.json" }}
+      - persist_to_workspace:
+          root: .
+          paths:
+            - node_modules
+  test:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
       - run:
-          name: tests
+          name: Test
           command: npm run test
