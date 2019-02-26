@@ -10,7 +10,8 @@ import {
   HISTORY_CLEAR,
   SET_REGISTER,
   SWAP_REGISTERS,
-  TOGGLE_REGISTER_BIT
+  TOGGLE_REGISTER_BIT,
+  SET_TUTORIAL_DONE
 } from "./constants";
 import { Radix, BitLength, RegisterKey, BinaryOp } from "../types";
 
@@ -47,3 +48,7 @@ export const historyRemove = createAction(HISTORY_REMOVE, resolve => {
 });
 
 export const historyClear = createAction(HISTORY_CLEAR);
+
+export const setTutorialDone = createAction(SET_TUTORIAL_DONE, resolve => {
+  return (done: boolean) => resolve({ done });
+});

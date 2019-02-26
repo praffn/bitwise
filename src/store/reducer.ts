@@ -9,6 +9,7 @@ export interface State {
   readonly radix: Radix;
   readonly registers: Registers;
   readonly history: ReadonlyArray<HistoryItem>;
+  readonly tutorialDone: boolean;
 }
 
 export const initialState: State = {
@@ -19,7 +20,8 @@ export const initialState: State = {
     A: 0,
     B: 0
   },
-  history: []
+  history: [],
+  tutorialDone: false
 };
 
 export default (
@@ -79,6 +81,11 @@ export default (
       return {
         ...state,
         history: []
+      };
+    case getType(actions.setTutorialDone):
+      return {
+        ...state,
+        tutorialDone: action.payload.done
       };
     default:
       return state;

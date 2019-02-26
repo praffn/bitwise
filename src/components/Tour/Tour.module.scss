@@ -1,0 +1,35 @@
+.tooltip {
+  width: 34rem;
+  background: white;
+  padding: 2rem;
+}
+
+.tooltipContent {
+}
+
+.tooltipActions {
+  margin-top: 3rem;
+  display: flex;
+  font-size: 0.8em;
+}
+
+.tooltipButton {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+
+  &:first-of-type {
+    justify-content: flex-start;
+  }
+
+  &:last-of-type {
+    justify-content: flex-end;
+  }
+}
+
+.showAgain {
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}

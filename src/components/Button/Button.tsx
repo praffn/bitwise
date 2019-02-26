@@ -8,11 +8,13 @@ interface ButtonProps {
   onClick?: () => void;
   disabled?: boolean;
   title?: string;
+  primary?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = props => {
   const className = classnames(styles.button, {
-    [styles.small]: props.small
+    [styles.small]: props.small,
+    [styles.primary]: props.primary
   });
   return (
     <button
