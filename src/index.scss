@@ -1,5 +1,12 @@
+@import "variables";
+
 html {
   box-sizing: border-box;
+  cursor: $cursor, auto;
+}
+
+label {
+  cursor: $cursor, auto;
 }
 
 *,

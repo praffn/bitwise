@@ -1,3 +1,5 @@
+@import "../../variables";
+
 .bitDisplay {
   display: flex;
   align-items: center;
@@ -14,6 +16,12 @@
 .listItem {
   &:nth-child(4n) {
     margin-right: 0.8em;
+  }
+}
+
+.editable {
+  .bitContainer {
+    cursor: $cursorClick, pointer;
   }
 }
 

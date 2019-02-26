@@ -26,10 +26,14 @@ const numberToBitArray = (n: number, bitLength: BitLength) => {
 const BitDisplay: React.FC<BitDisplay> = props => {
   const bits = numberToBitArray(props.value, props.bitLength);
   return (
-    <div className={styles.bitDisplay}>
+    <div
+      className={classnames(styles.bitDisplay, {
+        [styles.editable]: props.onBitClick
+      })}
+    >
       <ul className={styles.list}>
         {bits.map((on, index) => (
-          <li key={index} className={styles.listItem}>
+          <li key={index} className={classnames(styles.listItem)}>
             <Bit
               onClick={
                 props.onBitClick
