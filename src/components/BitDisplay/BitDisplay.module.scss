@@ -1,0 +1,64 @@
+.bitDisplay {
+  display: flex;
+  align-items: center;
+}
+
+.list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  user-select: none;
+}
+
+.listItem {
+  &:nth-child(4n) {
+    margin-right: 0.8em;
+  }
+}
+
+$bit-size: 1.5em;
+
+.bitContainer {
+  width: $bit-size;
+  height: $bit-size;
+  background: #ddd;
+  margin: 0 0.3em;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0.2em 0 #ddd, -0.2em 0 #ddd, 0 0.2em #ddd, 0 -0.2em #ddd;
+}
+
+.bit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  line-height: $bit-size;
+  transition: transform 0.2s linear;
+}
+
+.bitOne {
+  transform: translate3d(0, -100%, 0);
+}
+
+.bitToggled .bitZero {
+  transform: translate3d(0, 100%, 0);
+}
+
+.bitToggled .bitOne {
+  transform: translate3d(0, 0, 0);
+}
+
+.canonical {
+  text-align: right;
+  min-width: 11em;
+  margin-left: 1em;
+}
+
+.hex {
+  opacity: 0.5;
+  font-size: 0.6em;
+}

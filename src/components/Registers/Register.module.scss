@@ -1,0 +1,29 @@
+@function makeBorderShadow($color, $size) {
+  @return #{$size} 0 #{$color}, #{-$size} 0 #{$color}, 0 #{$size} #{$color},
+    0 #{-$size} #{$color}, inset -2px -2px rgba(black, 0.3);
+}
+
+.register {
+  border: 1px solid black;
+  margin-top: 2rem;
+  padding: 1rem;
+  box-shadow: makeBorderShadow(black, 2px);
+}
+
+.header {
+  margin-top: -2em;
+  margin-bottom: 0.5em;
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+  background: white;
+  padding: 0.4em;
+}
+
+.actions {
+  padding: 0 0.5rem;
+  background: white;
+}

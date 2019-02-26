@@ -1,0 +1,37 @@
+.history {
+  margin: 2rem 0 0 0;
+}
+
+.historyHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h4 {
+    margin: 0;
+  }
+}
+
+.historyList {
+  margin: 0.5rem 0 0 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.8em;
+}
+
+.historyItem {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.historyActions {
+  margin-right: 0.5em;
+}
+
+$opacity: 1;
+@for $i from 1 through 10 {
+  .historyItem:nth-child(#{$i}) {
+    opacity: $opacity;
+  }
+  $opacity: $opacity - 0.1;
+}

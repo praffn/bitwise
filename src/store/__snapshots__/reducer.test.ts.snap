@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`reducer initialState has correct initialState 1`] = `
+Object {
+  "bitLength": 16,
+  "history": Array [],
+  "radix": "dec",
+  "registers": Object {
+    "A": 0,
+    "B": 0,
+  },
+  "signed": false,
+}
+`;

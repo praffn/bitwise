@@ -1,0 +1,40 @@
+@function makeBorderShadow($color, $size, $inverse: false) {
+  @return #{$size} 0 #{$color}, #{-$size} 0 #{$color}, 0 #{$size} #{$color},
+    0 #{-$size} #{$color},
+    inset if($inverse, 2px, -2px) if($inverse, 2px, -2px) rgba(black, 0.3);
+}
+
+.checkBoxContainer {
+  background-color: #eee;
+  box-shadow: makeBorderShadow(#777, 2px);
+  width: 0.8em;
+  height: 0.8em;
+  margin: 0 0.5em;
+  display: inline-block;
+  position: relative;
+}
+
+.checkBoxMark {
+  position: absolute;
+  top: -0.25em;
+  left: 0.05em;
+  right: 0;
+  bottom: 0;
+  display: block;
+
+  &::before {
+    text-align: center;
+    font-size: 0.8em;
+    content: " ";
+  }
+}
+
+.checkBox:checked + .checkBoxMark {
+  &::before {
+    content: "x";
+  }
+}
+
+.checkBox {
+  appearance: none;
+}

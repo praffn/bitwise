@@ -1,0 +1,21 @@
+.config {
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  margin-right: 1rem;
+
+  label {
+    display: flex;
+  }
+}
+
+.label {
+  font-size: 0.5em;
+  margin-right: 0.3em;
+}
