@@ -53,11 +53,14 @@ jobs:
           name: Install and configure deploy dependencies
           command: |
             sudo npm install -g --silent gh-pages
-            git config user.email "praffn+bitwise@praffn.dk"
+            git config user.email "praffn+ci-build@praffn.dk"
             git config user.name "Phillip Raffnsoe (via CircleCI)"
+      - add_ssh_keys:
+          fingerprints:
+            - "c9:f5:95:7d:41:d5:6f:55:4f:3e:d2:e6:08:29:ce:39"
       - run:
           name: Deploy to gh-pages branch
-          command: gh-pages --dist build
+          command: gh-pages --message "[skip ci] update" --dist build
 
 workflows:
   version: 2
