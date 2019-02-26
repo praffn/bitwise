@@ -47,7 +47,7 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      - attach_workspace
+      - attach_workspace:
           at: .
       - deploy:
           name: Deploy to GitHub Pages
@@ -97,4 +97,3 @@ workflows:
           filters:
             branches:
               only: master
-
