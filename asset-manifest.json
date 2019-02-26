@@ -1,13 +1,13 @@
 {
-  "main.css": "/static/css/main.a532c77c.chunk.css",
-  "main.js": "/static/js/main.57dd6347.chunk.js",
-  "main.js.map": "/static/js/main.57dd6347.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.fdfcfda2.js",
-  "runtime~main.js.map": "/static/js/runtime~main.fdfcfda2.js.map",
-  "static/js/2.760acb88.chunk.js": "/static/js/2.760acb88.chunk.js",
-  "static/js/2.760acb88.chunk.js.map": "/static/js/2.760acb88.chunk.js.map",
-  "index.html": "/index.html",
-  "precache-manifest.a3ff2c34224463e6c1dfa4539fdc6c8a.js": "/precache-manifest.a3ff2c34224463e6c1dfa4539fdc6c8a.js",
-  "service-worker.js": "/service-worker.js",
-  "static/css/main.a532c77c.chunk.css.map": "/static/css/main.a532c77c.chunk.css.map"
+  "main.css": "/bitwise/static/css/main.a532c77c.chunk.css",
+  "main.js": "/bitwise/static/js/main.15f4e5dd.chunk.js",
+  "main.js.map": "/bitwise/static/js/main.15f4e5dd.chunk.js.map",
+  "runtime~main.js": "/bitwise/static/js/runtime~main.48744940.js",
+  "runtime~main.js.map": "/bitwise/static/js/runtime~main.48744940.js.map",
+  "static/js/2.760acb88.chunk.js": "/bitwise/static/js/2.760acb88.chunk.js",
+  "static/js/2.760acb88.chunk.js.map": "/bitwise/static/js/2.760acb88.chunk.js.map",
+  "index.html": "/bitwise/index.html",
+  "precache-manifest.8a78d1551846e2812360734bba6e0a50.js": "/bitwise/precache-manifest.8a78d1551846e2812360734bba6e0a50.js",
+  "service-worker.js": "/bitwise/service-worker.js",
+  "static/css/main.a532c77c.chunk.css.map": "/bitwise/static/css/main.a532c77c.chunk.css.map"
 }
