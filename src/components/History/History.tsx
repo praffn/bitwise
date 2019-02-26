@@ -5,6 +5,8 @@ import BitDisplay from "../BitDisplay";
 import styles from "./History.module.scss";
 import Button from "../Button";
 
+export const historyClassName = styles.history;
+
 interface HistoryProps {
   history: ReadonlyArray<HistoryItem>;
   bitLength: BitLength;
@@ -34,41 +36,45 @@ const History: React.FC<HistoryProps> = ({
           clear
         </Button>
       </div>
-      <ul className={styles.historyList}>
-        {history.map(item => (
-          <li key={item.id} className={styles.historyItem}>
-            <div className={styles.historyActions}>
-              <Button
-                title="remove"
-                small
-                onClick={() => historyRemove(item.id)}
-              >
-                x
-              </Button>
-              <Button
-                title="set register A"
-                small
-                onClick={() => setRegister("A", item.value)}
-              >
-                A
-              </Button>
-              <Button
-                title="set register B"
-                small
-                onClick={() => setRegister("B", item.value)}
-              >
-                B
-              </Button>
-            </div>
-            <BitDisplay
-              value={item.value}
-              bitLength={bitLength}
-              radix={radix}
-              signed={signed}
-            />
-          </li>
-        ))}
-      </ul>
+      {history.length === 0 ? (
+        <p>History is empty... Perform some operations ;)</p>
+      ) : (
+        <ul className={styles.historyList}>
+          {history.map(item => (
+            <li key={item.id} className={styles.historyItem}>
+              <div className={styles.historyActions}>
+                <Button
+                  title="remove"
+                  small
+                  onClick={() => historyRemove(item.id)}
+                >
+                  x
+                </Button>
+                <Button
+                  title="set register A"
+                  small
+                  onClick={() => setRegister("A", item.value)}
+                >
+                  A
+                </Button>
+                <Button
+                  title="set register B"
+                  small
+                  onClick={() => setRegister("B", item.value)}
+                >
+                  B
+                </Button>
+              </div>
+              <BitDisplay
+                value={item.value}
+                bitLength={bitLength}
+                radix={radix}
+                signed={signed}
+              />
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

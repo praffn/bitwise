@@ -7,9 +7,11 @@ interface BinaryOpsProps {
   swapRegisters: () => void;
 }
 
+export const binaryOpsClassName = "binaryOps";
+
 const BinaryOps: React.FC<BinaryOpsProps> = ({ historyAdd, swapRegisters }) => {
   return (
-    <div>
+    <div className={binaryOpsClassName}>
       <Button title="and" onClick={() => historyAdd("and")}>
         &amp;
       </Button>

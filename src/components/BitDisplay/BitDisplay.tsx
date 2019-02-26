@@ -6,6 +6,8 @@ import { BitLength, Radix } from "../../types";
 import { getCanonicalValue } from "../../util";
 import Bit from "./Bit";
 
+export const bitClassName = styles.bitContainer;
+
 interface BitDisplay {
   value: number;
   bitLength: BitLength;

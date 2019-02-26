@@ -10,5 +10,6 @@ Object {
     "B": 0,
   },
   "signed": false,
+  "tutorialDone": false,
 }
 `;

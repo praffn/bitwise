@@ -34,8 +34,13 @@ $button-border-color: #ccc;
   }
 }
 
-.button--primary {
-  background-color: lightblue;
+.primary {
+  $primary-color: #3498db;
+  background-color: $primary-color;
+  color: white;
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
 }
 
 .small {

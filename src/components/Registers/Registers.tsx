@@ -7,6 +7,10 @@ import {
   RegisterKey
 } from "../../types";
 
+import styles from "./Register.module.scss";
+
+export const registersClassName = styles.registers;
+
 export interface RegistersProps {
   registers: RegistersType;
   setRegister: (key: RegisterKey, value: number) => void;
@@ -25,7 +29,7 @@ const Registers: React.FC<RegistersProps> = ({
   signed
 }) => {
   return (
-    <div className="Registers">
+    <div className={styles.registers}>
       <Register
         title="A"
         value={registers.A}

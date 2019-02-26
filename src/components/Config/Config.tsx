@@ -6,6 +6,8 @@ import CheckBox from "../CheckBox";
 
 import styles from "./Config.module.scss";
 
+export const configClassName = styles.config;
+
 interface ConfigProps {
   bitLength: BitLength;
   setBitLength: (bitLength: BitLength) => void;

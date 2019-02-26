@@ -1,6 +1,7 @@
 import * as React from "react";
 
-import wizard from "./wizard.png";
+// import wizard from "wizard.png";
+import wizard from "../../assets/wizard.png";
 
 import styles from "./Header.module.scss";
 

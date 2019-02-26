@@ -6,6 +6,9 @@ import BitDisplay from "../BitDisplay/BitDisplay";
 import { BitLength, Radix } from "../../types";
 import { getBitLengthMask } from "../../util";
 
+export const registerClassName = styles.register;
+export const unaryOpsClassName = styles.actions;
+
 interface RegisterProps {
   title: string;
   value: number;
@@ -42,7 +45,9 @@ const Register: React.FC<RegisterProps> = ({
   const mask = getBitLengthMask(bitLength);
 
   return (
-    <div className={styles.register}>
+    <div
+      className={`${styles.register} ${title === "A" ? "tour-register" : ""}`}
+    >
       <div className={styles.header}>
         <p className={styles.title}>{title}</p>
         <div className={styles.actions}>
