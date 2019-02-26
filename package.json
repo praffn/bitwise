@@ -1,5 +1,6 @@
 {
   "name": "bitwise-v2",
+  "homepage": "http://praffn.dk/bitwise",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
