@@ -43,3 +43,15 @@ jobs:
       - run:
           name: Test
           command: npm run test
+
+workflows:
+  version: 2
+  main_flow:
+    jobs:
+      - prepare
+      - test:
+          requires:
+            - prepare
+      - build:
+          requires:
+            - test
