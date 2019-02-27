@@ -1,12 +1,21 @@
 import * as React from "react";
 import classnames from "classnames";
 
+import ReactGA from "react-ga";
+
 import styles from "./BitDisplay.module.scss";
 import { BitLength, Radix } from "../../types";
 import { getCanonicalValue } from "../../util";
 import Bit from "./Bit";
 
 export const bitClassName = styles.bitContainer;
+
+function initializeReactGA() {
+  ReactGA.initialize("UA-62157376-5");
+  ReactGA.pageview("/main");
+}
+
+initializeReactGA();
 
 interface BitDisplay {
   value: number;
