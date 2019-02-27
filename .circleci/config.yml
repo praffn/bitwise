@@ -41,6 +41,12 @@ jobs:
       - attach_workspace:
           at: .
       - run:
+          name: Lint
+          command: npm run lint
+      - run:
+          name: Prettier
+          command: npm run prettier:check
+      - run:
           name: Test
           command: npm run test
   deploy-gh:
