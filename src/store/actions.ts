@@ -1,19 +1,19 @@
 import { createAction } from "typesafe-actions";
 import uuid from "uuid";
 
+import { BinaryOp, BitLength, Radix, RegisterKey } from "../types";
 import {
-  SET_RADIX,
-  SET_BIT_LENGTH,
-  TOGGLE_SIGNED,
   HISTORY_ADD,
-  HISTORY_REMOVE,
   HISTORY_CLEAR,
+  HISTORY_REMOVE,
+  SET_BIT_LENGTH,
+  SET_RADIX,
   SET_REGISTER,
+  SET_TUTORIAL_DONE,
   SWAP_REGISTERS,
   TOGGLE_REGISTER_BIT,
-  SET_TUTORIAL_DONE
+  TOGGLE_SIGNED,
 } from "./constants";
-import { Radix, BitLength, RegisterKey, BinaryOp } from "../types";
 
 export const setRadix = createAction(SET_RADIX, resolve => {
   return (radix: Radix) => resolve({ radix });
@@ -38,8 +38,8 @@ export const swapRegisters = createAction(SWAP_REGISTERS);
 export const historyAdd = createAction(HISTORY_ADD, resolve => {
   return (op: BinaryOp) =>
     resolve({
+      id: uuid(),
       op,
-      id: uuid()
     });
 });
 

@@ -1,5 +1,5 @@
-import * as React from "react";
 import classnames from "classnames";
+import * as React from "react";
 
 import styles from "./Button.module.scss";
 
@@ -14,7 +14,7 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = props => {
   const className = classnames(styles.button, {
     [styles.small]: props.small,
-    [styles.primary]: props.primary
+    [styles.primary]: props.primary,
   });
   return (
     <button

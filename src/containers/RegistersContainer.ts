@@ -1,27 +1,27 @@
 import { connect } from "react-redux";
+import { bindActionCreators, Dispatch } from "redux";
 
 import Registers from "../components/Registers";
-import { RootState, RootAction } from "../store";
-import { Dispatch, bindActionCreators } from "redux";
+import { RootAction, RootState } from "../store";
 import { setRegister, toggleRegisterBit } from "../store/actions";
 
 const mapStateToProps = (state: RootState) => ({
-  registers: state.registers,
   bitLength: state.bitLength,
   radix: state.radix,
-  signed: state.signed
+  registers: state.registers,
+  signed: state.signed,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<RootAction>) =>
   bindActionCreators(
     {
       setRegister,
-      toggleRegisterBit
+      toggleRegisterBit,
     },
-    dispatch
+    dispatch,
   );
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Registers);

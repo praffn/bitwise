@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 
 import "./index.scss";
 import * as serviceWorker from "./serviceWorker";
 
-import { configureStore } from "./store";
 import App from "./App";
-import { PersistGate } from "redux-persist/integration/react";
+import { configureStore } from "./store";
 
 const { store, persistor } = configureStore();
 
@@ -18,7 +18,7 @@ ReactDOM.render(
         style={{
           display: "flex",
           justifyContent: "center",
-          padding: "1rem"
+          padding: "1rem",
         }}
       >
         <div style={{ display: "flex" }}>
@@ -27,7 +27,7 @@ ReactDOM.render(
       </div>
     </PersistGate>
   </Provider>,
-  document.getElementById("root")
+  document.getElementById("root"),
 );
 
 // If you want your app to work offline and load faster, you can change

@@ -25,7 +25,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "lint": "tslint --project ."
+    "lint": "tslint --project .",
+    "prettier:run": "prettier --write src/**/*.ts src/**/*.tsx",
+    "prettier:check": "prettier --check src/**/*.ts src/**/*.tsx"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -41,6 +43,7 @@
     "@types/react-redux": "^7.0.1",
     "@types/uuid": "^3.4.4",
     "node-sass": "^4.11.0",
+    "prettier": "^1.16.4",
     "tslint": "^5.13.0",
     "tslint-config-prettier": "^1.18.0"
   }

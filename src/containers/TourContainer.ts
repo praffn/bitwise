@@ -1,22 +1,23 @@
-import Tour from "../components/Tour";
 import { connect } from "react-redux";
-import { RootState, RootAction } from "../store";
-import { Dispatch, bindActionCreators } from "redux";
+import { bindActionCreators, Dispatch } from "redux";
+
+import Tour from "../components/Tour";
+import { RootAction, RootState } from "../store";
 import { setTutorialDone } from "../store/actions";
 
 const mapStateToProps = (state: RootState) => ({
-  show: !state.tutorialDone
+  show: !state.tutorialDone,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<RootAction>) =>
   bindActionCreators(
     {
-      setDone: setTutorialDone
+      setDone: setTutorialDone,
     },
-    dispatch
+    dispatch,
   );
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Tour);

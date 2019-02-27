@@ -1,11 +1,19 @@
 import * as React from "react";
+import ReactGA from "react-ga";
 
-import ConfigContainer from "./containers/ConfigContainer";
-import RegistersContainer from "./containers/RegistersContainer";
-import BinaryOpsContainer from "./containers/BinaryOpsContainer";
-import HistoryContainer from "./containers/HistoryContainer";
 import Header from "./components/Header";
+import BinaryOpsContainer from "./containers/BinaryOpsContainer";
+import ConfigContainer from "./containers/ConfigContainer";
+import HistoryContainer from "./containers/HistoryContainer";
+import RegistersContainer from "./containers/RegistersContainer";
 import TourContainer from "./containers/TourContainer";
+
+function initializeReactGA() {
+  ReactGA.initialize("UA-62157376-5");
+  ReactGA.pageview("/main");
+}
+
+initializeReactGA();
 
 export const App: React.FC<{}> = () => {
   return (

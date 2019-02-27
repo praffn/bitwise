@@ -1,5 +1,5 @@
-import * as React from "react";
 import classnames from "classnames";
+import * as React from "react";
 
 import styles from "./BitDisplay.module.scss";
 
@@ -9,11 +9,11 @@ interface BitProps {
 }
 
 export default class Bit extends React.PureComponent<BitProps> {
-  render() {
+  public render() {
     return (
       <div
         className={classnames(styles.bitContainer, {
-          [styles.bitToggled]: this.props.on
+          [styles.bitToggled]: this.props.on,
         })}
         onClick={this.props.onClick}
       >

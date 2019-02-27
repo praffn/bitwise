@@ -1,4 +1,4 @@
-import { Radix, BitLength, BinaryOp } from "./types";
+import { BinaryOp, BitLength, Radix } from "./types";
 
 export const radixToNumber = (radix: Radix) => {
   switch (radix) {
@@ -35,7 +35,7 @@ export const getCanonicalValue = (
   value: number,
   bitLength: BitLength,
   signed: boolean = false,
-  radix: Radix
+  radix: Radix,
 ) => {
   // this seems... very hacky?
   let result = 0;
@@ -57,7 +57,9 @@ export const getCanonicalValue = (
 };
 
 export const getBitLengthMask = (bitLength: number) => {
-  if (bitLength > 31) return 0xffffffff;
+  if (bitLength > 31) {
+    return 0xffffffff;
+  }
   return (1 << bitLength) - 1;
 };
 
@@ -65,7 +67,7 @@ export const compute = (
   a: number,
   b: number,
   bitLength: BitLength,
-  op: BinaryOp
+  op: BinaryOp,
 ) => {
   const mask = getBitLengthMask(bitLength);
   const aa = a & mask;

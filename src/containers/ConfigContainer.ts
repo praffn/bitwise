@@ -1,27 +1,27 @@
 import { connect } from "react-redux";
-import { Dispatch, bindActionCreators } from "redux";
+import { bindActionCreators, Dispatch } from "redux";
 
 import Config from "../components/Config";
-import { RootState, RootAction } from "../store";
+import { RootAction, RootState } from "../store";
 import * as actions from "../store/actions";
 
 const mapStateToProps = (state: RootState) => ({
-  signed: state.signed,
+  bitLength: state.bitLength,
   radix: state.radix,
-  bitLength: state.bitLength
+  signed: state.signed,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<RootAction>) =>
   bindActionCreators(
     {
-      toggleSigned: actions.toggleSigned,
+      setBitLength: actions.setBitLength,
       setRadix: actions.setRadix,
-      setBitLength: actions.setBitLength
+      toggleSigned: actions.toggleSigned,
     },
-    dispatch
+    dispatch,
   );
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Config);

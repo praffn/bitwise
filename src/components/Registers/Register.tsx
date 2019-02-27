@@ -1,10 +1,10 @@
 import * as React from "react";
 
-import styles from "./Register.module.scss";
-import Button from "../Button";
-import BitDisplay from "../BitDisplay/BitDisplay";
 import { BitLength, Radix } from "../../types";
 import { getBitLengthMask } from "../../util";
+import BitDisplay from "../BitDisplay/BitDisplay";
+import Button from "../Button";
+import styles from "./Register.module.scss";
 
 export const registerClassName = styles.register;
 export const unaryOpsClassName = styles.actions;
@@ -26,20 +26,20 @@ const Register: React.FC<RegisterProps> = ({
   radix,
   signed,
   bitLength,
-  title
+  title,
 }) => {
   const inputClick = () => {
     const input = prompt(
-      `Enter a value for register ${title}. You can input hex by prepending 0x`
+      `Enter a value for register ${title}. You can input hex by prepending 0x`,
     );
     if (!input) {
       return;
     }
-    const value = parseInt(input);
-    if (isNaN(value)) {
+    const parsedValue = parseInt(input, undefined);
+    if (isNaN(parsedValue)) {
       return;
     }
-    onChangeValue(value);
+    onChangeValue(parsedValue);
   };
 
   const mask = getBitLengthMask(bitLength);

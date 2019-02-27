@@ -1,9 +1,9 @@
 import * as React from "react";
-import { HistoryItem, BitLength, Radix, RegisterKey } from "../../types";
-import BitDisplay from "../BitDisplay";
 
-import styles from "./History.module.scss";
+import { BitLength, HistoryItem, Radix, RegisterKey } from "../../types";
+import BitDisplay from "../BitDisplay";
 import Button from "../Button";
+import styles from "./History.module.scss";
 
 export const historyClassName = styles.history;
 
@@ -26,7 +26,7 @@ const History: React.FC<HistoryProps> = ({
 
   historyClear,
   historyRemove,
-  setRegister
+  setRegister,
 }) => {
   return (
     <div className={styles.history}>

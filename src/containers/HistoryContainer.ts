@@ -1,34 +1,28 @@
-import History from "../components/History";
 import { connect } from "react-redux";
-import { RootState, RootAction } from "../store";
-import { Dispatch, bindActionCreators } from "redux";
+import { bindActionCreators, Dispatch } from "redux";
+
+import History from "../components/History";
+import { RootAction, RootState } from "../store";
 import * as actions from "../store/actions";
 
-// interface HistoryProps {
-//     history: ReadonlyArray<HistoryItem>;
-//     bitLength: BitLength;
-//     radix: Radix;
-//     signed: boolean;
-//   }
-
 const mapStateToProps = (state: RootState) => ({
-  history: state.history,
   bitLength: state.bitLength,
+  history: state.history,
   radix: state.radix,
-  signed: state.signed
+  signed: state.signed,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<RootAction>) =>
   bindActionCreators(
     {
-      setRegister: actions.setRegister,
+      historyClear: actions.historyClear,
       historyRemove: actions.historyRemove,
-      historyClear: actions.historyClear
+      setRegister: actions.setRegister,
     },
-    dispatch
+    dispatch,
   );
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(History);

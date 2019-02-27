@@ -1,5 +1,5 @@
 import * as React from "react";
-import JoyRide, { TooltipRenderProps, CallBackProps } from "react-joyride";
+import JoyRide, { CallBackProps, TooltipRenderProps } from "react-joyride";
 import Button from "../Button";
 
 import steps from "./steps";
@@ -15,7 +15,7 @@ const Tooltip = ({
   // closeProps,
   primaryProps,
   skipProps,
-  tooltipProps
+  tooltipProps,
 }: TooltipRenderProps) => {
   return (
     <div {...tooltipProps} className={styles.tooltip}>

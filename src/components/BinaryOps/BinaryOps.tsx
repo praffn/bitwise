@@ -1,5 +1,6 @@
 import * as React from "react";
-import { Registers, BinaryOp } from "../../types";
+
+import { BinaryOp } from "../../types";
 import Button from "../Button";
 
 interface BinaryOpsProps {

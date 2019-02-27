@@ -1,11 +1,11 @@
 import * as React from "react";
-import Register from "./Register";
 import {
-  Registers as RegistersType,
   BitLength,
   Radix,
-  RegisterKey
+  RegisterKey,
+  Registers as RegistersType,
 } from "../../types";
+import Register from "./Register";
 
 import styles from "./Register.module.scss";
 
@@ -26,7 +26,7 @@ const Registers: React.FC<RegistersProps> = ({
   toggleRegisterBit,
   bitLength,
   radix,
-  signed
+  signed,
 }) => {
   return (
     <div className={styles.registers}>

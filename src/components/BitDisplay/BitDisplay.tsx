@@ -1,21 +1,12 @@
-import * as React from "react";
 import classnames from "classnames";
+import * as React from "react";
 
-import ReactGA from "react-ga";
-
-import styles from "./BitDisplay.module.scss";
 import { BitLength, Radix } from "../../types";
 import { getCanonicalValue } from "../../util";
 import Bit from "./Bit";
+import styles from "./BitDisplay.module.scss";
 
 export const bitClassName = styles.bitContainer;
-
-function initializeReactGA() {
-  ReactGA.initialize("UA-62157376-5");
-  ReactGA.pageview("/main");
-}
-
-initializeReactGA();
 
 interface BitDisplay {
   value: number;
@@ -25,8 +16,8 @@ interface BitDisplay {
   onBitClick?: (index: number) => void;
 }
 
-const numberToBitArray = (n: number, bitLength: BitLength) => {
-  return n
+const numberToBitArray = (value: number, bitLength: BitLength) => {
+  return value
     .toString(2)
     .padStart(bitLength, "0")
     .split("")
@@ -39,7 +30,7 @@ const BitDisplay: React.FC<BitDisplay> = props => {
   return (
     <div
       className={classnames(styles.bitDisplay, {
-        [styles.editable]: props.onBitClick
+        [styles.editable]: props.onBitClick,
       })}
     >
       <ul className={styles.list}>
@@ -63,7 +54,7 @@ const BitDisplay: React.FC<BitDisplay> = props => {
           props.value,
           props.bitLength,
           props.signed,
-          props.radix
+          props.radix,
         )}
       </div>
     </div>

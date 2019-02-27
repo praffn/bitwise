@@ -1,7 +1,7 @@
-import { ActionType, StateType } from "typesafe-actions";
 import { createStore } from "redux";
-import { persistReducer, persistStore, PersistConfig } from "redux-persist";
+import { PersistConfig, persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import { ActionType, StateType } from "typesafe-actions";
 
 import * as actions from "./actions";
 import reducer from "./reducer";
@@ -10,9 +10,9 @@ export type RootAction = ActionType<typeof actions>;
 export type RootState = StateType<typeof reducer>;
 
 const persistConfig: PersistConfig = {
-  version: 1,
   key: "root-v2",
-  storage
+  storage,
+  version: 1,
 };
 
 const persistedReducer = persistReducer(persistConfig, reducer);

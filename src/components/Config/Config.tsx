@@ -1,7 +1,7 @@
 import * as React from "react";
 
-import Button from "../Button";
 import { BitLength, Radix } from "../../types";
+import Button from "../Button";
 import CheckBox from "../CheckBox";
 
 import styles from "./Config.module.scss";
@@ -25,7 +25,7 @@ const Config: React.FC<ConfigProps> = ({
   radix,
   setRadix,
   signed,
-  toggleSigned
+  toggleSigned,
 }) => {
   return (
     <div className={styles.config}>

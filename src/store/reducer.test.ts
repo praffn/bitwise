@@ -1,10 +1,10 @@
-import reducer, { State, initialState } from "./reducer";
 import * as actions from "./actions";
+import reducer, { initialState as RinitialState, State } from "./reducer";
 
 const getInitialState = (state?: Partial<State>) =>
   ({
-    ...initialState,
-    ...(state ? state : {})
+    ...RinitialState,
+    ...(state ? state : {}),
   } as State);
 
 describe("reducer", () => {
@@ -88,7 +88,7 @@ describe("reducer", () => {
 
       it("new items are added at the front", () => {
         const initialState = getInitialState({
-          history: [{ A: 0, B: 0, id: "initial", value: 0, op: "add" }]
+          history: [{ A: 0, B: 0, id: "initial", value: 0, op: "add" }],
         });
         expect(initialState.history[0].id).toEqual("initial");
         const state = reducer(initialState, actions.historyAdd("add"));
@@ -102,9 +102,9 @@ describe("reducer", () => {
             A: 0,
             B: 0,
             id: "",
+            op: "add",
             value: 0,
-            op: "add"
-          })
+          }),
         });
         expect(initialState.history).toHaveLength(10);
         const state = reducer(initialState, actions.historyAdd("add"));
@@ -116,7 +116,7 @@ describe("reducer", () => {
     describe("removing items", () => {
       it("removes item given existing id", () => {
         const initialState = getInitialState({
-          history: [{ A: 0, B: 0, id: "initial", value: 0, op: "add" }]
+          history: [{ A: 0, B: 0, id: "initial", value: 0, op: "add" }],
         });
         expect(initialState.history).toHaveLength(1);
         const state = reducer(initialState, actions.historyRemove("initial"));
@@ -125,12 +125,12 @@ describe("reducer", () => {
 
       it("does nothing if id does not exists", () => {
         const initialState = getInitialState({
-          history: [{ A: 0, B: 0, id: "initial", value: 0, op: "add" }]
+          history: [{ A: 0, B: 0, id: "initial", value: 0, op: "add" }],
         });
         expect(initialState.history).toHaveLength(1);
         const state = reducer(
           initialState,
-          actions.historyRemove("doesnt exists")
+          actions.historyRemove("doesnt exists"),
         );
         expect(state.history).toHaveLength(1);
       });
@@ -143,9 +143,9 @@ describe("reducer", () => {
             A: 0,
             B: 0,
             id: "",
+            op: "add",
             value: 0,
-            op: "add"
-          })
+          }),
         });
         expect(initialState.history).toHaveLength(10);
         const state = reducer(initialState, actions.historyClear());
