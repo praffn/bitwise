@@ -1,12 +1,18 @@
-@import "variables";
+$cursor: url("./assets/cursor.png") !default;
+$cursorClick: url("/assets/cursor-click.png") 14 0 !default;
 
 html {
   box-sizing: border-box;
   cursor: $cursor, auto;
 }
 
-label {
+label,
+button {
   cursor: $cursor, auto;
+}
+
+button:hover {
+  cursor: $cursorClick, pointer;
 }
 
 *,
