@@ -3,16 +3,16 @@ import { bindActionCreators, Dispatch } from "redux";
 
 import Tour from "../components/Tour";
 import { RootAction, RootState } from "../store";
-import { setTutorialDone } from "../store/actions";
+import { setRunningTutorial } from "../store/actions";
 
 const mapStateToProps = (state: RootState) => ({
-  show: !state.tutorialDone,
+  running: state.runningTutorial,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<RootAction>) =>
   bindActionCreators(
     {
-      setDone: setTutorialDone,
+      setRunning: setRunningTutorial,
     },
     dispatch,
   );

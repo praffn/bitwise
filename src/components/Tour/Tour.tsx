@@ -39,14 +39,14 @@ const Tooltip = ({
 };
 
 interface TourProps {
-  show: boolean;
-  setDone: (done: boolean) => void;
+  running: boolean;
+  setRunning: (running: boolean) => void;
 }
 
 const Tour: React.FC<TourProps> = props => {
   const callback = (e: CallBackProps) => {
     if (e.action === "reset") {
-      props.setDone(true);
+      props.setRunning(false);
     }
   };
   return (
@@ -54,12 +54,12 @@ const Tour: React.FC<TourProps> = props => {
       <JoyRide
         steps={steps}
         tooltipComponent={Tooltip}
-        run={props.show}
+        run={props.running}
         continuous
         callback={callback}
       />
       <div className={styles.showAgain}>
-        <Button small onClick={() => props.setDone(false)}>
+        <Button small onClick={() => props.setRunning(true)}>
           ?
         </Button>
       </div>
