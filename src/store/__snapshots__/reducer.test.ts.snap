@@ -9,7 +9,7 @@ Object {
     "A": 0,
     "B": 0,
   },
+  "runningTutorial": false,
   "signed": false,
-  "tutorialDone": false,
 }
 `;

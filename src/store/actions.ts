@@ -9,7 +9,7 @@ import {
   SET_BIT_LENGTH,
   SET_RADIX,
   SET_REGISTER,
-  SET_TUTORIAL_DONE,
+  SET_RUNNING_TUTORIAL,
   SWAP_REGISTERS,
   TOGGLE_REGISTER_BIT,
   TOGGLE_SIGNED,
@@ -49,6 +49,9 @@ export const historyRemove = createAction(HISTORY_REMOVE, resolve => {
 
 export const historyClear = createAction(HISTORY_CLEAR);
 
-export const setTutorialDone = createAction(SET_TUTORIAL_DONE, resolve => {
-  return (done: boolean) => resolve({ done });
-});
+export const setRunningTutorial = createAction(
+  SET_RUNNING_TUTORIAL,
+  resolve => {
+    return (running: boolean) => resolve({ running });
+  },
+);

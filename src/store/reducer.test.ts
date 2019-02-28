@@ -154,18 +154,18 @@ describe("reducer", () => {
     });
 
     describe("tutorial", () => {
-      it("can be set to done", () => {
-        const initialState = getInitialState({ tutorialDone: false });
-        expect(initialState.tutorialDone).toBeFalsy();
-        const state = reducer(initialState, actions.setTutorialDone(true));
-        expect(state.tutorialDone).toBeTruthy();
+      it("can be set to running", () => {
+        const initialState = getInitialState({ runningTutorial: false });
+        expect(initialState.runningTutorial).toBeFalsy();
+        const state = reducer(initialState, actions.setRunningTutorial(true));
+        expect(state.runningTutorial).toBeTruthy();
       });
 
       it("can be set to not done", () => {
-        const initialState = getInitialState({ tutorialDone: true });
-        expect(initialState.tutorialDone).toBeTruthy();
-        const state = reducer(initialState, actions.setTutorialDone(false));
-        expect(state.tutorialDone).toBeFalsy();
+        const initialState = getInitialState({ runningTutorial: true });
+        expect(initialState.runningTutorial).toBeTruthy();
+        const state = reducer(initialState, actions.setRunningTutorial(false));
+        expect(state.runningTutorial).toBeFalsy();
       });
     });
   });
