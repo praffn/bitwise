@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/bitwise/static/js/runtime~main.48744940.js"
   },
   {
-    "revision": "e515d314e440956aee82",
-    "url": "/bitwise/static/js/main.e515d314.chunk.js"
+    "revision": "03d220c38a26f1923ab4",
+    "url": "/bitwise/static/js/main.03d220c3.chunk.js"
   },
   {
     "revision": "b692c1ca7557b2936710",
     "url": "/bitwise/static/js/2.b692c1ca.chunk.js"
   },
   {
-    "revision": "e515d314e440956aee82",
-    "url": "/bitwise/static/css/main.68e3baba.chunk.css"
+    "revision": "03d220c38a26f1923ab4",
+    "url": "/bitwise/static/css/main.910b9af8.chunk.css"
   },
   {
-    "revision": "1ef1099b8b2f6c7d6669610b3b5ec211",
+    "revision": "82193da08dc0e71ce9f913d969e8f275",
     "url": "/bitwise/index.html"
   }
 ];
